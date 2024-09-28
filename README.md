@@ -1,22 +1,17 @@
 Requerimientos
-1. Implementa useParams para obtener el id de la pizza en la página de Pizza.jsx. Con
-el id obtenido, realiza una petición a la API para obtener la información de la pizza y
-mostrarla en la página. (2 puntos)
-Tips: Puedes además implementar Link en el componente CardPizza.jsx para
-redirigir a la página de Pizza.jsx con el id de la pizza.
-2. Crea un UserContext para almacenar el token (simulado) que estamos utilizando en
-el Navbar.jsx, Por ahora este context tiene que tener las siguientes características:
-○ Un estado que almacene el token, por defecto, estará en true.
-○ Un método logout que cambie el estado del token a false.
-(2 puntos)
-3. Utiliza el UserContext en el Navbar.jsx, al hacer click en el botón de logout, se debe
-ejecutar el método logout. (2 puntos)
-Tips: Recuerda que cuando el token es true, debe mostrar los botones de: Profile,
-Logout. Cuando el token es false, debe mostrar los botones de: Login, Register.
-Home y Total siempre deben estar visibles.
-4. Utiliza el UserContext en la página de Cart.jsx, deshabilita el botón "pagar" en caso de
-que el token sea false. (1 punto)
-5. Implementa la ruta protegida para "/profile". Si el token es false, redirige a "/login".
-Además, si el token es true, los usuarios no deberían poder acceder a la página de
-login y register (los puedes redirigir al home). (3 puntos)
-
+1. En el UserContext, implementa los métodos para hacer login y register, consumiendo
+las rutas /api/auth/login y /api/auth/register respectivamente. Estas rutas te
+devolverán un token JWT y un email que debes almacenar sus respectivos estados.
+2. En el UserContext, implementa un método para hacer logout, este método debe
+eliminar el token y el email del estado. 
+3. En el UserContext, implementa un método para obtener el perfil del usuario
+autenticado, consumiendo la ruta /api/auth/me. 
+4. Tanto la página de Login como la de Register, deben implementar los métodos
+creados en UserContext para acceder al sistema. 
+5. En la página profile, muestra el email del usuario autenticado y un botón para cerrar
+sesión. 
+6. El botón logout del navbar debe cerrar la sesión del usuario. 
+7. En la página de Cart.jsx, implementa el método para enviar el carrito de compras al
+backend, consumiendo la ruta /api/checkouts. 
+8. En la página de Cart.jsx, muestra un mensaje de éxito cuando se haya realizado la
+compra. 
