@@ -1,0 +1,19 @@
+.header-container {
+    background-image: url('../assets/pexels-fariphotography-905847.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .header-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 100px;
+    border-radius: 10px;
+  }
+  
